@@ -6,8 +6,59 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+
+    - name: send custom message with args
+      uses: actions/checkout@master
+      with:
+        secret: ${{ secrets.secret }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        room: ${{ secrets.room }}
+        args: line message from GitHub Actions ${{ github.event_name }} event.
+
+    - name: send custom message
+      uses: actions/checkout@master
+      with:
+        secret: ${{ secrets.secret }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        room: ${{ secrets.room }}
+        message: "test from GitHub Actions"
+
     - name: send location message
       uses: actions/checkout@master
       with:
+        secret: ${{ secrets.secret }}
         token: ${{ secrets.GITHUB_TOKEN }}
-        message: "xxx"
+        room: ${{ secrets.room }}
+        locations: "竹北體育館::新竹縣竹北市::24.834687::120.993368"
+
+    - name: send sticker message
+      uses: actions/checkout@master
+      with:
+        secret: ${{ secrets.secret }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        room: ${{ secrets.room }}
+        stickers: "1::1::100"
+
+    - name: send image message
+      uses: actions/checkout@master
+      with:
+        secret: ${{ secrets.secret }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        room: ${{ secrets.room }}
+        images: "https://cdn3.iconfinder.com/data/icons/picons-social/57/16-apple-128.png"
+
+    - name: send audio message
+      uses: actions/checkout@master
+      with:
+        secret: ${{ secrets.secret }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        room: ${{ secrets.room }}
+        audios: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3::20"
+
+    - name: send video message
+      uses: actions/checkout@master
+      with:
+        secret: ${{ secrets.secret }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        room: ${{ secrets.room }}
+        videos: "https://cuts.diamond.mlb.com/FORGE/2019/2019-09/28/ee8d662f-8984c7b1-2fc40a58-csvm-diamondx64-asset_1280x720_59_4000K.mp4"
