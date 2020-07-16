@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: send custom message with args
-      uses: appleboy/line-action@master
+      uses: HN41A11/LINE-Message-Notify@master
       with:
         secret: ${{ secrets.secret }}
         token: ${{ secrets.token }}
@@ -16,7 +16,7 @@ jobs:
         args: line message from GitHub Actions ${{ github.event_name }} event.
 
     - name: send custom message
-      uses: HN41A11/LINE-Message-Notify
+      uses: HN41A11/LINE-Message-Notify@master
       with:
         secret: ${{ secrets.secret }}
         token: ${{ secrets.token }}
@@ -24,7 +24,7 @@ jobs:
         message: "test from GitHub Actions"
 
     - name: send location message
-      uses: appleboy/line-action@master
+      uses: HN41A11/LINE-Message-Notify@master
       with:
         secret: ${{ secrets.secret }}
         token: ${{ secrets.token }}
@@ -32,7 +32,7 @@ jobs:
         locations: "竹北體育館::新竹縣竹北市::24.834687::120.993368"
 
     - name: send sticker message
-      uses: appleboy/line-action@master
+      uses: HN41A11/LINE-Message-Notify@master
       with:
         secret: ${{ secrets.secret }}
         token: ${{ secrets.token }}
@@ -40,7 +40,7 @@ jobs:
         stickers: "1::1::100"
 
     - name: send image message
-      uses: appleboy/line-action@master
+      uses: HN41A11/LINE-Message-Notify@master
       with:
         secret: ${{ secrets.secret }}
         token: ${{ secrets.token }}
@@ -48,7 +48,7 @@ jobs:
         images: "https://cdn3.iconfinder.com/data/icons/picons-social/57/16-apple-128.png"
 
     - name: send audio message
-      uses: appleboy/line-action@master
+      uses: HN41A11/LINE-Message-Notify@master
       with:
         secret: ${{ secrets.secret }}
         token: ${{ secrets.token }}
@@ -56,7 +56,7 @@ jobs:
         audios: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3::20"
 
     - name: send video message
-      uses: appleboy/line-action@master
+      uses: HN41A11/LINE-Message-Notify@master
       with:
         secret: ${{ secrets.secret }}
         token: ${{ secrets.token }}
