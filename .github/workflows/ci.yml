@@ -9,5 +9,5 @@ jobs:
     - name: send location message
       uses: actions/checkout@master
       with:
-        access_token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         message: "xxx"
