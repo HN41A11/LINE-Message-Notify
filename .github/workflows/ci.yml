@@ -16,7 +16,7 @@ jobs:
         args: line message from GitHub Actions ${{ github.event_name }} event.
 
     - name: send custom message
-      uses: appleboy/line-action@master
+      uses: HN41A11/LINE-Message-Notify
       with:
         secret: ${{ secrets.secret }}
         token: ${{ secrets.token }}
